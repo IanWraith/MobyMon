@@ -1,0 +1,7 @@
+[OPTIONS]
+TITLE=MobyMon Help
+COMPRESS=true
+WARNING=2
+
+[FILES]
+mobymon.rtf

@@ -1,0 +1,967 @@
+{\rtf1\ansi
+{\fonttbl \f0\fswiss Arial;}
+\deff0
+\f0\fs70
+\qc
+MobyMon Help
+\par\par
+\f0\fs25
+\ql
+@ Ian Wraith 1998
+\par\par
+\f0\fs25
+{\uldb 01 - What is MobyMon ?}{\v what_is}
+\par
+{\uldb 02 - A quick guide to MobyMon}{\v quick_guide}
+\par
+{\uldb 03 - A guide to MobyMon's menus}{\v menu_guide}
+\par
+{\uldb 04 - The EXCLUSIVE.USR file}{\v exclusive_usr}
+\par
+{\uldb 05 - The IGNORE.USR file}{\v ignore_usr}
+\par
+{\uldb 06 - The NAMES.USR file}{\v names_usr}
+\par
+{\uldb 07 - HPDATA Display}{\v hpdata_disp}
+\par
+{\uldb 08 - Trouble Shooting}{\v trouble_shooting}
+\page
+
+#{\footnote what_is}
+\f0\fs40
+\qc
+${\footnote What is MobyMon ?}
+K{\footnote MobyMon}
+K{\footnote What is MobyMon ?}
+\par
+What is MobyMon?
+\par\par
+\ql
+\f0\fs20
+ MobyMon is designed as a tool for engineers. It decodes and displays
+ all Mobitex frames and mpak's. It can even correctly display the information
+ in Messaging or MTP/1 HPDATA mpaks. Information in other mpaks can be
+ displayed in either hexidecimal or ascii format.
+\par\par
+ The system has been used by Mobitex software developers as the ability
+ to actually view the data transmitted and received by a Mobitex modem
+ while debugging can be invaluable. 
+\par
+ It has also been used by Mobitex network operators for network troubleshooting.
+\page
+
+#{\footnote quick_guide}
+\f0\fs40
+\qc
+${\footnote A quick guide to MobyMon}
+K{\footnote Quick guide}
+\par
+A quick guide to MobyMon
+\par\par
+\ql
+\f0\fs20
+ It is easy for you to quickly to get MobyMon up and running if you follow these
+ instructions.
+\par\par
+ 1) Connect the MobyMon modem to its power supply when you do this the LED will light.
+\par\par
+ 2) Connect the MobyMon modem to a spare serial port on your PC using the serial cable
+ provided.
+\par\par
+ 3) Use the cable provided to connect the MobyMon modem to a radio receiver's discriminator
+output.
+\par\par
+ 4) Tune to the radio receiver to a Mobitex base transmit channel.
+\par\par
+ 5) If it isn't already start MobyMon running. In the MAIN menu click on CONNECT (LOCAL)
+ a dialog box will appear. Now select which serial port you have connected the MobyMon 
+ modem to and click on the OK button.
+\par\par
+ At this point MobyMon will do a number of things. First it will test the serial link
+ between the PC and modem. Then the modem looks for a Mobitex BIT SYNC sequence. When
+ it finds one it signals this to the PC. Finally the modem looks for a Mobitex FRAME
+ HEAD and sends this to the PC.
+\par\par  
+ Now MobyMon will display to the user the identity of the Mobitex system it is monitoring
+ as well as the identity of base station. Then it will begin displaying the activity on
+ this channel.
+\page
+
+#{\footnote menu_guide}
+\f0\fs40
+\qc
+${\footnote A MobyMon Menu Guide}
+K{\footnote Menu guide}
+\par
+A MobyMon Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Main}{\v main_m}
+\par
+{\uldb Display}{\v display_m}
+\par
+{\uldb Information}{\v information_m}
+\par
+{\uldb Options}{\v options_m}
+\par
+{\uldb View}{\v view_m}
+\par
+{\uldb Help}{\v help_m}
+\par
+\page
+
+#{\footnote main_m}
+\f0\fs40
+\qc
+${\footnote MAIN Menu}
+K{\footnote MAIN Menu}
+\par
+MAIN Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Connect (Local)}{\v connect_m}
+\par
+{\uldb Monitor Base}{\v base_m}
+\par
+{\uldb Monitor Mobiles}{\v mobiles_m}
+\par
+{\uldb Begin Logging to Disk}{\v blog_m}
+\par
+{\uldb End Logging to Disk}{\v elog_m}
+\par
+{\uldb Exit}{\v exit_m}
+\par
+\page
+
+#{\footnote connect_m}
+\f0\fs40
+\qc
+${\footnote Connect (Local)}
+K{\footnote Connect (Local) Menu Item}
+K{\footnote Connecting to the Modem}
+\par
+Connect (Local) Menu Item
+\par\par
+\ql
+\f0\fs20
+ If this menu item is selected then MobyMon attempts to connect to the decoder modem.
+ To do this it first sends a reset commend to the modem. Then as a check of the RS232
+ it waits for a response from the modem. If monitoring a Mobitex base the modem then
+ looks for a BIT SYNC sequence and signals to the PC when it finds one. After this
+ it looks for a valid HEAD and sends this information to the PC.
+\page
+
+#{\footnote base_m}
+\f0\fs40
+\qc
+${\footnote Monitor Bases}
+K{\footnote Monitor Base Menu Item}
+\par
+Monitor Base Menu Item
+\par\par
+\ql
+\f0\fs20
+ Use this option when monitor the base side of Mobitex transmissions.
+\par
+ When selected the decoder modem searches for the base BIT SYNC sequence.
+\page
+
+#{\footnote mobiles_m}
+\f0\fs40
+\qc
+${\footnote Monitor Mobiles}
+K{\footnote Monitor Mobiles Menu Item}
+\par
+Monitor Base Menu Item
+\par\par
+\ql
+\f0\fs20
+ Use this option when monitor the mobile side of Mobitex transmissions.
+\par
+ When selected the decoder modem searches for the mobile BIT SYNC sequence.
+\page
+
+#{\footnote blog_m}
+\f0\fs40
+\qc
+${\footnote Begin Logging to Disk}
+K{\footnote Begin Logging to Disk}
+K{\footnote Saving to Disk}
+\par
+Begin Logging to Disk Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected this option a dialog box will appear prompting the user for a 
+ name for the file to be created. 
+\par
+ After that any information that is displayed on the screen will be written
+ to the file. 
+\page
+
+#{\footnote elog_m}
+\f0\fs40
+\qc
+${\footnote End Logging to Disk}
+K{\footnote End Logging to Disk}
+K{\footnote Stop Saving to Disk}
+\par
+End Logging to Disk Menu Item
+\par\par
+\ql
+\f0\fs20
+ When this option is selected logging to disk will end and MobyMon will close the file.
+\page
+
+#{\footnote exit_m}
+\f0\fs40
+\qc
+${\footnote Exit}
+K{\footnote Exit}
+\par
+Exit Menu Item
+\par\par
+\ql
+\f0\fs20
+ When this option is selected MobyMon will terminate. If logging to disk is enabled
+ the file will be closed.
+\page
+
+#{\footnote display_m}
+\f0\fs40
+\qc
+${\footnote DISPLAY Menu}
+K{\footnote DISPLAY Menu}
+\par
+DISPLAY Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Display Frames}{\v display_frames_m}
+\par
+{\uldb CSUBCOM}{\v csubcom_m}
+\par
+{\uldb DTESERV}{\v dteserv_m}
+\par
+{\uldb PSOCOM}{\v psocom_m}
+\par
+{\uldb PSUBCOM}{\v psubcom_m}
+\par
+{\uldb Display RE}{\v display_re_m}
+\par
+{\uldb Display Sequence Number}{\v display_sequence_number_m}
+\par
+{\uldb Display Traffic State}{\v display_traffic_state_m}
+\par
+{\uldb Ignore Traffic States}{\v ignore_traffic_states_m}
+\par
+{\uldb Monitor a Single MAN}{\v monitor_a_single_man_m}
+\par
+{\uldb Monitor all MAN's}{\v monitor_all_mans_m}
+\par
+{\uldb Use EXCLUSIVE.USR}{\v use_exclusive_usr_m}
+\par
+{\uldb Use IGNORE.USR}{\v use_ignore_usr_m}
+\par
+\page
+
+#{\footnote display_frames_m}
+\f0\fs40
+\qc
+${\footnote Display Frames}
+K{\footnote Display Frames}
+\par
+Display Frames Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to decide which Mobitex frames they wish MobyMon
+ to display. 
+\par\par
+ When selected MobyMon displays a list of all the Mobitex frames it can display.
+ If a frame type has a small tick next to it then that frame will be displayed. 
+ Click on a frame type and the tick will go then MobyMon will no longer display
+ that type of frame. Click again and the tick will return.
+\page
+
+#{\footnote csubcom_m}
+\f0\fs40
+\qc
+${\footnote CSUBCOM}
+K{\footnote CSUBCOM}
+\par
+CSUBCOM Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to decide which CSUBCOM packets they wish MobyMon
+ to display. 
+\par\par
+ When selected MobyMon displays a list of all the CSUBCOM packets it can display.
+ If a packet has a small tick next to it then that type of packet will be displayed. 
+ Click on a CSUBCOM packet type and the tick will go then MobyMon will no longer display
+ that type of packet. Click again and the tick will return.
+\page
+
+#{\footnote dteserv_m}
+\f0\fs40
+\qc
+${\footnote DTESERV}
+K{\footnote DTESERV}
+\par
+DTESERV Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to decide which DTESERV packets they wish MobyMon
+ to display. 
+\par\par
+ When selected MobyMon displays a list of all the DTESERV packets it can display.
+ If a packet has a small tick next to it then that type of packet will be displayed. 
+ Click on a DTESERV packet type and the tick will go then MobyMon will no longer display
+ that type of packet. Click again and the tick will return.
+\page
+
+#{\footnote psocom_m}
+\f0\fs40
+\qc
+${\footnote PSOCOM}
+K{\footnote PSOCOM}
+\par
+PSOCOM Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to decide which PSOCOM packets they wish MobyMon
+ to display. 
+\par\par
+ When selected MobyMon displays a list of all the PSOCOM packets it can display.
+ If a packet has a small tick next to it then that type of packet will be displayed. 
+ Click on a PSOCOM packet type and the tick will go then MobyMon will no longer display
+ that type of packet. Click again and the tick will return.
+\page
+
+#{\footnote psubcom_m}
+\f0\fs40
+\qc
+${\footnote PSUBCOM}
+K{\footnote PSUBCOM}
+\par
+PSUBCOM Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to decide which PSUBCOM packets they wish MobyMon
+ to display. 
+\par\par
+ When selected MobyMon displays a list of all the PSUBCOM packets it can display.
+ If a packet has a small tick next to it then that type of packet will be displayed. 
+ Click on a PSUBCOM packet type and the tick will go then MobyMon will no longer display
+ that type of packet. Click again and the tick will return.
+\page
+
+#{\footnote display_re_m}
+\f0\fs40
+\qc
+${\footnote Display RE}
+K{\footnote Display RE}
+K{\footnote RE}
+\par
+Display RE Menu Item
+\par\par
+\ql
+\f0\fs20
+ If this option is set then if a frame has the RE bit set (it requires a response to
+ this link layer frame) then this will be displayed by MobyMon.
+\page
+
+#{\footnote display_sequence_number_m}
+\f0\fs40
+\qc
+${\footnote Display Sequence Number}
+K{\footnote Display Sequence Number}
+K{\footnote Sequence Number}
+\par
+Display Sequence Number Menu Item
+\par\par
+\ql
+\f0\fs20
+ If this option is set then the frame sequence number will be displayed by MobyMon.
+\page
+
+#{\footnote display_traffic_state_m}
+\f0\fs40
+\qc
+${\footnote Display Traffic State}
+K{\footnote Display Traffic State}
+K{\footnote Traffic State}
+\par
+Display Traffic State Menu Item
+\par\par
+\ql
+\f0\fs20
+ If this option is set then the packet traffic state will be displayed by MobyMon.
+\page
+
+#{\footnote ignore_traffic_states_m}
+\f0\fs40
+\qc
+${\footnote Ignore Traffic States}
+K{\footnote Ignore Traffic States}
+\par
+Ignore Traffic States Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option enables the user to display only Mobitex packets with certain
+ traffic states. If a traffic state has a small tick next to it then packets with
+ that traffic state will be displayed.
+\page
+
+#{\footnote monitor_a_single_man_m}
+\f0\fs40
+\qc
+${\footnote Monitor a Single MAN}
+K{\footnote Monitor a Single MAN}
+\par
+Monitor a Single MAN Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option is used when the user wants MobyMon to display Mobitex information
+ to or from a single MAN. When selected a dialog box will appear enter into this
+ the MAN of the unit you wish to monitor. This number must be in hexidecimal format. 
+\par\par
+ If after using this option you wish to monitor all MAN's again click on the
+ "Monitor all MAN's" menu item.
+\page
+
+#{\footnote monitor_all_mans_m}
+\f0\fs40
+\qc
+${\footnote Monitor all MAN's}
+K{\footnote Monitor all MAN's}
+\par
+Monitor all MAN's Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option is used when the user has used the "Monitor a single MAN" menu item
+ and now wishes to monitor all MAN's once again.
+\page
+
+#{\footnote use_exclusive_usr_m}
+\f0\fs40
+\qc
+${\footnote Use EXCLUSIVE.USR}
+K{\footnote Use EXCLUSIVE.USR}
+\par
+Use EXCLUSIVE.USR Menu Item
+\par\par
+\ql
+\f0\fs20
+ When this is selected MobyMon will only display information sent to or from the MAN's
+ the user has defined in the {\uldb EXCLUSIVE.USR }{\v exlusive_usr} file.
+\page
+
+#{\footnote use_ignore_usr_m}
+\f0\fs40
+\qc
+${\footnote Use IGNORE.USR}
+K{\footnote Use IGNORE.USR}
+\par
+Use IGNORE.USR Menu Item
+\par\par
+\ql
+\f0\fs20
+ When this is selected MobyMon will not display information sent to or from the MAN's
+ the user has defined in the {\uldb IGNORE.USR }{\v ignore_usr} file.
+\page
+
+#{\footnote information_m}
+\f0\fs40
+\qc
+${\footnote INFORMATION Menu}
+K{\footnote INFORMATION Menu}
+\par
+INFORMATION Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Signal Quality}{\v signal_quality_m}
+\par
+{\uldb System Channels}{\v system_channels_m}
+\par
+\page
+
+#{\footnote signal_quality_m}
+\f0\fs40
+\qc
+${\footnote Signal Quality Menu Item}
+K{\footnote Signal Quality Menu Item}
+\par
+Signal Quality Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected this menu items inform the user of the percentage of Mobitex packets
+ that failed the hamming code error check. This figure will also be much higher when
+ monitoring the mobile side of a Mobitex link than the base side.
+\page
+
+#{\footnote system_channels_m}
+\f0\fs40
+\qc
+${\footnote System Channels Menu Item}
+K{\footnote System Channels Menu Item}
+K{\footnote Adjacent Channels}
+K{\footnote <SVP> subtype 1 Frame}
+\par
+System Channels Menu Item
+\par\par
+\ql
+\f0\fs20
+ This option only becomes active only after MobyMon has received an <SVP> subtype 1 frame
+ which contains information on the frequencies used by adjacent base stations.
+\par
+ If selected it displays the base and mobile frequencies of adjacent Mobitex base
+ stations. 
+\par\par
+ {\i NOTE: This option will not work in all countries.}
+\page
+
+#{\footnote options_m}
+\f0\fs40
+\qc
+${\footnote OPTIONS Menu}
+K{\footnote OPTIONS Menu}
+\par
+OPTIONS Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Enable Error Checking}{\v enable_error_checking_m}
+\par
+{\uldb Enable FEC}{\v enable_fec_m}
+\par
+\page
+
+#{\footnote enable_error_checking_m}
+\f0\fs40
+\qc
+${\footnote Enable Error Checking Menu Item}
+K{\footnote Enable Error Checking Menu Item}
+\par
+Enable Error Checking Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected MobyMon will only display Mobitex packets which it believes (using the
+ hamming code error check) contain no errors. 
+\par
+ By default this option is turned on.
+\page
+
+#{\footnote enable_FEC_m}
+\f0\fs40
+\qc
+${\footnote Enable FEC Menu Item}
+K{\footnote Enable FEC Menu Item}
+K{\footnote FEC}
+K{\footnote Forward Error Correction}
+\par
+Enable FEC Menu Item
+\par\par
+\ql
+\f0\fs20
+ If this item is selected if MobyMon receives a packet which fails the hamming code
+ error check with a single bit error. Then MobyMon will attempt to coorect this error.
+\par\par
+ {\i NOTE: This option can only be used if the Enable Error Checking option has been
+ turned on.}
+\page
+
+#{\footnote view_m}
+\f0\fs40
+\qc
+${\footnote VIEW Menu}
+K{\footnote VIEW Menu}
+\par
+VIEW Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb View DATA as ASCII}{\v view_data_as_ascii_m}
+\par
+{\uldb View EXTPAK as ASCII}{\v view_extpak_as_ascii_m}
+\par
+{\uldb View HPDATA (User) as ASCII}{\v view_hpdata_as_ascii_m}
+\par
+{\uldb View SOS as ASCII}{\v view_sos_as_ascii_m}
+\par
+{\uldb View SOSINFO as ASCII}{\v view_sosinfo_as_ascii_m}
+\par
+\page
+
+#{\footnote view_data_as_ascii_m}
+\f0\fs40
+\qc
+${\footnote View DATA as ASCII Menu Item}
+K{\footnote View DATA as ASCII Menu Item}
+K{\footnote DATA mpak}
+\par
+View DATA as ASCII Menu Item Menu Item
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays the data contained in DATA mpaks as hexidecimal numbers.
+ However when this option is enabled the data is displayed as ASCII characters. 
+\par
+ All ASCII control characters are displayed in the Ctrl format. So for instance the
+ the ASCII character for the number 0D will be displayed as "CR". 
+\page
+
+#{\footnote view_extpak_as_ascii_m}
+\f0\fs40
+\qc
+${\footnote View EXTPAK as ASCII Menu Item}
+K{\footnote View EXTPAK as ASCII Menu Item}
+K{\footnote EXTPAK mpak}
+\par
+View EXPAK as ASCII Menu Item Menu Item
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays the data contained in EXTPAK mpaks as hexidecimal numbers.
+ However when this option is enabled the data is displayed as ASCII characters. 
+\par
+ All ASCII control characters are displayed in the Ctrl format. So for instance the
+ the ASCII character for the number 0D will be displayed as "CR". 
+\page
+
+#{\footnote view_hpdata_as_ascii_m}
+\f0\fs40
+\qc
+${\footnote View HPDATA (User) as ASCII Menu Item}
+K{\footnote View HPDATA (User) as ASCII Menu Item}
+K{\footnote HPDATA (User) mpak}
+\par
+View HPDATA (User) as ASCII Menu Item Menu Item
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays the data contained in HPDATA  (User) mpaks as hexidecimal numbers.
+ However when this option is enabled the data is displayed as ASCII characters. 
+\par
+ All ASCII control characters are displayed in the Ctrl format. So for instance the
+ the ASCII character for the number 0D will be displayed as "CR". 
+\page
+
+#{\footnote view_sos_as_ascii_m}
+\f0\fs40
+\qc
+${\footnote View SOS as ASCII Menu Item}
+K{\footnote View SOS as ASCII Menu Item}
+K{\footnote SOS mpak}
+\par
+View SOS as ASCII Menu Item Menu Item
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays the data contained in SOS mpaks as hexidecimal numbers.
+ However when this option is enabled the data is displayed as ASCII characters. 
+\par
+ All ASCII control characters are displayed in the Ctrl format. So for instance the
+ the ASCII character for the number 0D will be displayed as "CR". 
+\page
+
+#{\footnote view_sosinfo_as_ascii_m}
+\f0\fs40
+\qc
+${\footnote View SOSINFO as ASCII Menu Item}
+K{\footnote View SOSINFO as ASCII Menu Item}
+K{\footnote SOSINFO mpak}
+\par
+View SOSINFO as ASCII Menu Item Menu Item
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays the data contained in SOSINFO mpaks as hexidecimal numbers.
+ However when this option is enabled the data is displayed as ASCII characters. 
+\par
+ All ASCII control characters are displayed in the Ctrl format. So for instance the
+ the ASCII character for the number 0D will be displayed as "CR". 
+\page
+
+#{\footnote help_m}
+\f0\fs40
+\qc
+${\footnote HELP Menu}
+K{\footnote HELP Menu}
+\par
+HELP Menu Guide
+\par\par
+\ql
+\f0\fs25
+{\uldb Help}{\v help_d_m}
+\par
+{\uldb Decoder Information}{\v decoder_information_m}
+\par
+{\uldb About MobyMon}{\v about_mobymon_m}
+\par
+\page
+
+#{\footnote help_d_m}
+\f0\fs40
+\qc
+${\footnote Help Menu Item}
+K{\footnote Help Menu Item}
+\par
+Help Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected this help file is displayed.
+\page
+
+#{\footnote decoder_information_m}
+\f0\fs40
+\qc
+${\footnote Decoder Information Menu Item}
+K{\footnote Decoder Information Menu Item}
+K{\footnote Serial Number}
+K{\footnote Firmware Version}
+\par
+Decoder Information Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected this option displays the serial number of your MobyMon modem and
+ its firmware version number.
+\page
+
+#{\footnote about_mobymon_m}
+\f0\fs40
+\qc
+${\footnote About MobyMon Menu Item}
+K{\footnote About MobyMon Menu Item}
+\par
+About MobyMon Menu Item
+\par\par
+\ql
+\f0\fs20
+ When selected this option will display a little information about MobyMon.
+\page
+
+#{\footnote exclusive_usr}
+\f0\fs40
+\qc
+${\footnote EXCLUSIVE.USR}
+K{\footnote EXCLUSIVE.USR}
+\par
+The EXCLUSIVE.USR File
+\par\par
+\ql
+\f0\fs20
+ The EXCLUSIVE.USR file is an ASCII text file that can be edited by the user. If the
+ "Use EXCLUSIVE.USR" menu item is selected then MobyMon will only display Mobitex
+ information sent to or from the MAN's entered in the EXCLUSIVE.USR file.
+\par\par
+ A typical EXCLUSIVE.USR file is shown below ..
+\par\par
+{\b
+054e50
+\par
+00238f
+\par
+*}
+\par\par
+ In this file 054e50 is the first MAN the user wishes to monitor and 00238f is the
+ second. The "*" character signals the end of the file. {\b This character must be
+ the last character in the EXCLUSIVE.USR file or an error will occur.}
+\par\par
+ To write your own EXCLUSIVE.USR file use a text editor (such as NOTEPAD which comes
+ with Windows) to edit the EXCLUSIVE.USR file in your MobyMon directory. To add a
+ MAN to the list simply enter it on a line above the "*" character. Note that the
+ MAN's must be in hexidecimal format and must consist of 6 numbers. So if you wish
+ add the number 2F to the file it would be entered as "00002f".
+\page
+
+#{\footnote ignore_usr}
+\f0\fs40
+\qc
+${\footnote IGNORE.USR}
+K{\footnote IGNORE.USR}
+\par
+The IGNORE.USR File
+\par\par
+\ql
+\f0\fs20
+ The IGNORE.USR file is an ASCII text file that can be edited by the user. If the
+ "Use IGNORE.USR" menu item is selected then MobyMon will not display any Mobitex
+ information sent to or from the MAN's entered in the IGNORE.USR file.
+\par\par
+ A typical IGNORE.USR file is shown below ..
+\par\par
+{\b
+054e50
+\par
+00238f
+\par
+*}
+\par\par
+ In this file 054e50 is the first MAN the user wishes to ignore and 00238f is the
+ second. The "*" character signals the end of the file. {\b This character must be
+ the last character in the IGNORE.USR file or an error will occur.}
+\par\par
+ To write your own IGNORE.USR file use a text editor (such as NOTEPAD which comes
+ with Windows) to edit the IGNORE.USR file in your MobyMon directory. To add a
+ MAN to the list simply enter it on a line above the "*" character. Note that the
+ MAN's must be in hexidecimal format and must consist of 6 numbers. So if you wish
+ add the number 2F to the file it would be entered as "00002f".
+\page
+
+#{\footnote names_usr}
+\f0\fs40
+\qc
+${\footnote NAMES.USR}
+K{\footnote NAMES.USR}
+\par
+The NAMES.USR File
+\par\par
+\ql
+\f0\fs20
+ By default MobyMon displays MAN's as hexidecimal numbers. However if a MAN is entered
+ into the NAMES.USR file then it will be identified by a text string defined by the user
+ in the file.
+\par\par
+ So instead of displaying ..
+\par\par
+ To:1e7a08 From:2d05e2
+\par
+ STATUS #8b 21:28 7/2/1998
+\par\par
+ So instead of displaying ..
+\par\par
+ To Recovery Base From Vehicle.5
+\par
+ STATUS #8b 11:28 9/7/1998
+\par\par
+ The NAMES.USR file used to do this is listed below ..
+\par\par
+ 1e7a08 Recovery Base
+\par
+ 2d05e2 Vehicle.5
+\par
+*
+\par\par
+ Writing your own NAMES.USR is easy use a text editor (such as NOTEPAD that comes with
+ Windows) and edit the existing NAMES.USR file in the MobyMon directory. Create a line
+ above the "*" character and enter the MAN this must consist of 6 letters and be in
+ hexidecimal format. Then add a space and type in the text string identifier.
+\par\par
+{\b The "*" character must be the last character in the NAMES.USR file or an error will occur.}
+\page
+
+#{\footnote hpdata_disp}
+\f0\fs40
+\qc
+${\footnote HPDATA Display}
+K{\footnote HPDATA Display}
+K{\footnote MTP/1 Protocol}
+K{\footnote Messaging Protocol}
+\par
+HPDATA Display
+\par\par
+\ql
+\f0\fs20
+ When MobyMon receives a HPDATA message of the MTP/1 or MESSAGING type. Then instead of
+ displaying the raw data in hexidecimal format it will display the information according
+ to the approprate protocol specifications. 
+\par\par
+ For example an MTP/1 message will look like this ..
+\par\par
+To:171873 From:2048ab (2 Blocks)
+\par
+HPDATA 7:30 17/7/1998 MTP/1 Protocol
+\par
+CR (Connection Request)
+\par
+CON-ID#3c VER#0 SESS#0 CM
+\par
+0,0,0,7,1a,33,f2,33,2,0,5,0,52,4c
+\par\par 
+To:171873 From:2048ab (3 Blocks)
+\par
+HPDATA 7:31 17/7/1998 MTP/1 Protocol
+\par
+DT (Data)
+\par
+EOT TPDU-NR#0 ACK-NR#0
+\par
+2A,1,11,53,0,0,24,40,24,40,21,26,24,20,0,24,a4,24,22,ca
+\par\par
+To:171873 From:2048ab (2 Blocks)
+\par
+HPDATA 7:31 17/7/1998 MTP/1 Protocol
+\par
+DR (Disconnect Request)
+\par
+VER#0
+\par
+Normal disconnect initiated by the session entity
+\par\par
+While a Messaging protocol message will look like this ..
+\par\par
+To:1e8560 From:1e456f (4 Blocks)
+\par
+HPDATA 8:41 17/7/1998 Messaging Protocol
+\par
+Paging Msg ID#0
+\par
+Duncan call home now !<CR><LF>
+\page
+
+#{\footnote trouble_shooting}
+\f0\fs40
+\qc
+${\footnote Trouble Shooting}
+K{\footnote Trouble Shooting}
+K{\footnote Problems}
+\par
+Trouble Shooting
+\par\par
+\ql
+\f0\fs20
+ Problem #1
+\par
+ Even when monitoring a Mobitex base station with a high signal strength the Signal
+ Quality indicates over 60% of packets received have errors.
+\par\par
+ One possible solution is to make the following alterations to Windows 95/98. This improves 
+ its serial port preformance.
+\par
+ 1) Click on "My Computer"
+\par
+ 2) Click on "Control Panel"
+\par
+ 3) Click on "System"
+\par
+ 4) Click on "Device Manager"
+\par
+ 5) Click on "Ports (COM & LPT)"
+\par
+ 6) Click on the COM port you use for MobyMon
+\par
+ 7) Click on "Port Settings"
+\par
+ 8) Click on "Advanced"
+\par
+ 9) Set the Receive Buffer to its lowest setting
+\par
+ 10) Click on OK
+\page
+
+}
